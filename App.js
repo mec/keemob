@@ -1,23 +1,17 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StackNavigator } from 'react-navigation';
 
-export default class App extends React.Component {
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text>Open up App.js to start working on your app!</Text>
-        <Text>Changes you make will automatically reload.</Text>
-        <Text>Shake your phone to open the developer menu.</Text>
-      </View>
-    );
-  }
-}
+import HomeScreen from './screens/Home';
+import ColorScreen from './screens/Color';
+import TagsScreen from './screens/Tags';
+import GroupScreen from './screens/Group';
+import EntryScreen from './screens/Entries';
+import EntryItemScreen from './screens/Entry';
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
+export default StackNavigator({
+  Home: { screen: HomeScreen },
+  Group: { screen: GroupScreen },
+  Color: { screen: ColorScreen },
+  Tags: { screen: TagsScreen },
+  Entries: { screen: EntryScreen },
+  EntryItem: { screen: EntryItemScreen }
 });
